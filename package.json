@@ -33,6 +33,7 @@
     "formik": "^2.2.9",
     "graphql": "^16.3.0",
     "luxon": "^1.28.0",
+    "next": "^12.0.9",
     "notistack": "^1.0.10",
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
@@ -47,6 +48,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
+    "dev": "next dev",
     "start": "NODE_ENV=local react-scripts start",
     "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test",

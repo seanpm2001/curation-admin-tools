@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import pocketLogo from '../../assets/PKTLogoRounded_RGB.png';
 import pocketShield from '../../assets/pocket-shield.svg';
 import { useStyles } from './Header.styles';
@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = (props): JSX.Element => {
           >
             <Hidden smDown implementation="css">
               <Grid item sm={2}>
-                <Link to="/">
+                <Link href="/">
                   <img
                     className={classes.logo}
                     src={pocketLogo}
@@ -103,8 +103,8 @@ export const Header: React.FC<HeaderProps> = (props): JSX.Element => {
                         <ListItem
                           className={classes.menuLink}
                           button
-                          component={Link}
-                          to={link.url}
+                          // component={Link}
+                          //href={link.url}
                           key={link.url}
                           onClick={handleDrawerClose}
                         >
@@ -118,7 +118,7 @@ export const Header: React.FC<HeaderProps> = (props): JSX.Element => {
             </Hidden>
             <Hidden mdUp implementation="css">
               <Grid item xs={1}>
-                <Link to="/">
+                <Link href="/">
                   <img
                     className={classes.logoMobile}
                     src={pocketShield}
@@ -129,7 +129,8 @@ export const Header: React.FC<HeaderProps> = (props): JSX.Element => {
             </Hidden>
             <Grid item xs={4} sm={3}>
               <h1 className={classes.product}>
-                <Link to={productLink} className={classes.productLink}>
+                <Link href={productLink}>
+                  {/* className={classes.productLink}>*/}
                   {productName}
                 </Link>
               </h1>
@@ -143,8 +144,7 @@ export const Header: React.FC<HeaderProps> = (props): JSX.Element => {
                       <ListItem
                         className={classes.appBarLink}
                         button
-                        component={Link}
-                        to={link.url}
+                        href={link.url}
                         key={link.url}
                       >
                         <ListItemText primary={link.text} />

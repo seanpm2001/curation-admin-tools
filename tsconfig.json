@@ -18,16 +18,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "removeComments": true,
     "noEmitOnError": false,
     "sourceMap": true,
     "inlineSources": true,
     "sourceRoot": "/",
     "declaration": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "incremental": true
   },
   "include": [
     "src/**/*.ts*"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
