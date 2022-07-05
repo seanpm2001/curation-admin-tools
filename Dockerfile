@@ -1,5 +1,5 @@
 # development build - build app
-FROM node:16@sha256:a6c217d7c8f001dc6fc081d55c2dd7fb3fefe871d5aa7be9c0c16bd62bea8e0c as builder
+FROM node:16@sha256:a13d2d2aec7f0dae18a52ca4d38b592e45a45cc4456ffab82e5ff10d8a53d042 as builder
 WORKDIR /usr/src/app
 ARG GIT_SHA
 ARG APP_ENV
@@ -11,7 +11,7 @@ RUN npm install --silent \
     && REACT_APP_ENV=${APP_ENV} npm run build
 
 # production environment
-FROM nginx:1.21.6@sha256:859ab6768a6f26a79bc42b231664111317d095a4f04e4b6fe79ce37b3d199097
+FROM nginx:1.21.6@sha256:2bcabc23b45489fb0885d69a06ba1d648aeda973fae7bb981bafbb884165e514
 # Copy collections build into nginx html directory for now,
 # collections will be at the root of the server
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
